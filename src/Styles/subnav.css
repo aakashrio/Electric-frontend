@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.sub2{
+    /* border:1px solid pink; */
+    width: 100%;
+    margin: 0 auto 5% auto;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 2%;
+    border: 1px solid rgba(255, 255, 255, 0.253);
+    border-radius: 10px;
+    background-color:#121212 ;
+    box-shadow: rgba(255, 255, 255, 0.02) 0px 1px 2px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
+}
+
+.header2{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.header2 nav{
+    width: 100%;
+    margin: 0;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header2 nav #div1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid violet; */
+    width: 30%;
+    justify-content:center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.244);
+    background-color: #3333331a;
+    padding: 0.5%;
+    border-radius: 20px;
+
+}
+
+.header2 nav #div1 input{
+    /* border: 1px solid white; */
+    width: 80%;
+    height: 30px;
+    margin: 0 1%;
+    padding: 0 5%;
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+}
+
+.header2 nav #div1:hover{
+    background-color: rgba(61, 61, 61, 0.255);
+}
+
+
+
+.header2 nav #div2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid violet; */
+    width: 30%;
+    justify-content:start;
+    align-items: center;
+}
+
+.header2 nav #div3{
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: end;
+    /* border: 1px solid violet; */
+    width: 30%;
+}
+
+.header2 nav #div2 .link{
+    margin: 0 5%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.header2 nav #div3 .link{
+    margin: 0 5%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
