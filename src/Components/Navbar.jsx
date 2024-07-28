@@ -7,12 +7,12 @@ import '../Styles/Navbar.css';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import Contact from './contact';
 import Profile from './profile';
-import Subnav  from './subnav'
 import Home from './home';
 import Store from './store';
 import Cart from './cart';
 import News from './news';
 import Wishlist from './wishlist'
+import Subnav from './subnav';
 
 const Navbar = () => {
     const NavRef = useRef();
@@ -47,13 +47,13 @@ const Navbar = () => {
             </header>
             <div className="content">
                 <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/profile/*' element={<Profile />} />
-                <Route path='/store' element={<Store />} />
-                <Route path='/news' element={<News />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/wishlist' element={<Wishlist />} />
+                    <Route path='/' element={<Home />} />
+                    <Route path='/contact' element={<Contact />} />
+                    <Route path='/profile/*' element={<Profile />}/>
+                    <Route path='/store' element={<Store />} />
+                    <Route path='/news' element={<News />} />
+                    <Route path='/cart' element={<Cart />} />
+                    <Route path='/wishlist' element={<Wishlist />} />
                 </Routes>
             </div>
         </Router>

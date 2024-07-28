@@ -4,55 +4,38 @@ import Login from "./login";
 import Signup from "./signup";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter as Router, Route, Routes, useNavigate, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 const Profile = () => {
-  const [logindata, setlogindata] = useState(false);
-  const [login, setlogin] = useState(true);
-  const [user, setuser] = useState({
-    name: "",
+  const animation = "Slide"
+  const [user, setuser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : { name: "" };
   });
 
   useEffect(() => {
-    if (user.name === "") {
-      setlogindata(false);
+    if (user.name) {
+      localStorage.setItem("user", JSON.stringify(user));
     } else {
-      setlogindata(true);
+      localStorage.removeItem("user");
     }
-  }, [user, logindata]);
+  }, [user]);
 
-  useEffect(() => {
-    console.log(logindata);
-    console.log(user);
-  }, [user, logindata]);
-
-  const getdata = (username) => {
-    setlogindata(true);
-    setuser({
-      name: username,
-    });
+  const getData = (username) => {
+    setuser({ name: username });
   };
 
-
-
   const logout = () => {
-    setlogindata(false);
-    setuser({ name: "" });
-    // ,
-    //   {
-    //   onClose: () => {
-    //     setuser({ name: '' });
-    //     setlogindata(false);
-    //   }
-    // }
-
     toast.success("Logout successful");
+    localStorage.removeItem('token');
+    setuser({ name: "" });
+    
   };
 
   return (
     <div className="main">
       <div className="user-content">
-        {logindata ? (
+        {user.name ? (
           <div className="user-profile">
             <span>Profile</span>
             <hr />
@@ -61,24 +44,24 @@ const Profile = () => {
           </div>
         ) : (
           <Routes>
-            <Route path="/login" element={<Login onSuccess={getdata} />} />
-            <Route path="/signup" element={<Signup onSuccess={getdata} />} />
+            <Route path="/login" element={<Login onSuccess={getData} />} />
+            <Route path="/signup" element={<Signup onSuccess={getData} />} />
             <Route path="*" element={<Navigate to="/profile/login" />} />
           </Routes>
         )}
       </div>
       <ToastContainer
         position="top-right"
-        autoClose={1000}
-        hideProgressBar
+        autoClose={2000}
+        hideProgressBar={false}
         newestOnTop={false}
-        closeOnClick
+        closeOnClick={false}
         rtl={false}
         pauseOnFocusLoss={false}
         draggable={false}
-        pauseOnHover
+        pauseOnHover={false}
         theme="colored"
-      />
+        />
     </div>
   );
 };

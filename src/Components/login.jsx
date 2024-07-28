@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = ({ onSuccess }) => {
+
   const navigate = useNavigate();
   const [logindata, setlogindata] = useState({
     email: "",
@@ -28,9 +29,10 @@ const Login = ({ onSuccess }) => {
     try {
       const response = await axios.post("http://localhost:5000/profile/login",{email , password}
       );
-      const { code, message , username } = response.data;
+      const { token, code, message , username } = response.data;
       console.log(code , message ,username)
       if (code === 0) {
+        localStorage.setItem('token', token);
         toast.success(message,{onClose: () => {
             onSuccess(username);
             navigate('/profile')

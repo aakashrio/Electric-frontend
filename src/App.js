@@ -6,11 +6,6 @@ import axios from 'axios';
 import{ useEffect ,useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-
-
-
 function App() {
   useEffect(() => {
     const checkserver = async () => {

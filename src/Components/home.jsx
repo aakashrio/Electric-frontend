@@ -5,10 +5,8 @@ import '../Styles/home.css'
 const home = () => {
   return (
     <div className='subn'>
-      <Subnav />
-      <div className='main'>
+       <Subnav />
           home
-      </div>
     </div>
   )
 }

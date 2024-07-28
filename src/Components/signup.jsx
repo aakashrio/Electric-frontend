@@ -43,10 +43,11 @@ const Signup = ({ onSuccess }) => {
 
     try {
       const response = await axios.post("http://localhost:5000/profile/signup", userdata);
-      const { code, message } = response.data;
-
+      const { token, code, message } = response.data;
+      
       console.log(code,message)
       if (code === 0) {
+        localStorage.setItem('token', token);
         toast.success(message,{onClose:()=>{
           onSuccess(userdata.username)
           navigate('/profile')

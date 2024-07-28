@@ -95,10 +95,16 @@
 }
 
 @media only screen and (max-width: 1024px) {
+
+  .header1{
+    height: 70px;
+  }
+
   .header1 img {
     height: auto;
     width: 20%;
     margin: 10px 30px;
+    scale: 0.7;
   }
   .nav-btn-menu {
     display: flex;
@@ -162,6 +168,11 @@
 }
 
 @media only screen and (max-width: 796px) {
+
+  .header1{
+    height: 60px;
+  }
+
   .header1 img {
     height: auto;
     width: 25%;
@@ -217,10 +228,14 @@
 }
 
 @media only screen and (max-width: 481px) {
-  .header img {
+  .header1{
+    height: 50px;
+  }
+   .header img {
     height: auto;
     width: 35%;
     margin: 10px 10px;
+    /* scale: 2.5; */
   }
   .nav-btn-menu {
     display: flex;
