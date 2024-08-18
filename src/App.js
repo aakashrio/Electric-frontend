@@ -1,16 +1,15 @@
-
-import './App.css';
+import React, { useEffect} from 'react';
 import Navbar from './Components/Navbar';
-import React from 'react';
 import axios from 'axios';
-import{ useEffect ,useState } from 'react';
+import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(() => {
-    const checkserver = async () => {
+    const checkServer = async () => {
       try {
         const response = await axios.get('http://localhost:5000/status');
+        console.log(response)
         if (response.data.status === 'online') {
           console.log("Server is online");
         } else {
@@ -20,9 +19,9 @@ function App() {
         console.log("Unable to connect with server");
       }
     };
-
-    checkserver();
+    checkServer();
   }, []);
+
   return (
     <div className="App">
         <React.Fragment>

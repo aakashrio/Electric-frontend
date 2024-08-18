@@ -10,4 +10,5 @@ const news = () => {
   )
 }
 
-export default news
+
+export default React.memo(news);

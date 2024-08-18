@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 const Profile = () => {
-  const animation = "Slide"
+  // toast.info("")
   const [user, setuser] = useState(() => {
     const savedUser = localStorage.getItem("user");
     return savedUser ? JSON.parse(savedUser) : { name: "" };
@@ -26,13 +26,12 @@ const Profile = () => {
   };
 
   const logout = () => {
-    toast.success("Logout successful");
-    localStorage.removeItem('token');
-    setuser({ name: "" });
-    
+      localStorage.removeItem('token');
+      setuser({ name: "" });
+      toast.success("logout sucessfull")
   };
-
   return (
+    <div>
     <div className="main">
       <div className="user-content">
         {user.name ? (
@@ -50,18 +49,19 @@ const Profile = () => {
           </Routes>
         )}
       </div>
-      <ToastContainer
+    </div>
+    <ToastContainer
         position="top-right"
-        autoClose={2000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
-        closeOnClick={false}
+        closeOnClick
         rtl={false}
         pauseOnFocusLoss={false}
         draggable={false}
-        pauseOnHover={false}
+        pauseOnHover
         theme="colored"
-        />
+      />
     </div>
   );
 };

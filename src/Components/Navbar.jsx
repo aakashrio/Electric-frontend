@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef  } from 'react';
 import { TiThMenu } from 'react-icons/ti';
 import { TbUser } from "react-icons/tb";
 import { IoClose } from 'react-icons/io5';
@@ -12,7 +12,6 @@ import Store from './store';
 import Cart from './cart';
 import News from './news';
 import Wishlist from './wishlist'
-import Subnav from './subnav';
 
 const Navbar = () => {
     const NavRef = useRef();
@@ -60,4 +59,5 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+
+export default React.memo(Navbar);

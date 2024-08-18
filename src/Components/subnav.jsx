@@ -7,8 +7,9 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { GiNewspaper } from "react-icons/gi";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { HiHomeModern } from "react-icons/hi2";
+import { FaHome } from "react-icons/fa";
 
-const Subnav = () => {
+const Subnav = React.memo (() => {
     const [searchVisible, setSearchVisible] = useState(window.innerWidth > 796);
     const [screenSize, setScreenSize] = useState(window.innerWidth <= 796);
     const [containerVisible, setContainerVisible] = useState(true);
@@ -32,10 +33,11 @@ const Subnav = () => {
 
     const updateScreen = () => {
         const width = window.innerWidth;
-        setScreenSize(width <= 796);
-        setSearchVisible(width > 796); 
-        setContainerVisible(true);
-        setExpandSearch(false);
+        const ismobile = width < 796;
+        if(!expandSearch){
+            setSearchVisible(ismobile);
+            setContainerVisible(true);
+        }
     };
 
     useEffect(() => {
@@ -53,6 +55,7 @@ const Subnav = () => {
                         <IoIosCloseCircleOutline onClick={handleClose}  className={searchVisible && screenSize ? 'search-close-btn-visible' : 'search-close-btn-hidden'} />
                     </div>
                     <div className={containerVisible ? 'div2' : 'div2-hidden'}>
+                        <NavLink className="link" activeClassName="active"  to='/'><span>Home</span> <FaHome size={20}  id='store-icon' className='subnav-icon'/></NavLink>
                         <NavLink className="link" activeClassName="active"  to='/store'><span>Store</span> <HiHomeModern size={20}  id='store-icon' className='subnav-icon'/></NavLink>
                         <NavLink className="link" activeClassName="active" id='news' to='/news'><span>News</span><GiNewspaper size={20} id='news-icon' className='subnav-icon' /></NavLink>
                     </div>
@@ -64,6 +67,7 @@ const Subnav = () => {
             </header>
         </div>
     );
-};
+});
 
-export default Subnav;
+
+export default React.memo(Subnav);

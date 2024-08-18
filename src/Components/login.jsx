@@ -27,12 +27,13 @@ const Login = ({ onSuccess }) => {
     const password = logindata.password.trim();
 
     try {
-      const response = await axios.post("http://localhost:5000/profile/login",{email , password}
+      const response = await axios.post("http://192.168.219.236:5000/profile/login",{email , password}
       );
       const { token, code, message , username } = response.data;
       console.log(code , message ,username)
       if (code === 0) {
         localStorage.setItem('token', token);
+        localStorage.setItem('user',username)
         toast.success(message,{onClose: () => {
             onSuccess(username);
             navigate('/profile')
@@ -70,7 +71,7 @@ const Login = ({ onSuccess }) => {
             </button>
           </span>
         </form>
-        <a id="fpass">Forgot Password &#x3f;</a>
+        <a id="fpass" href="www.google.com">Forgot Password &#x3f;</a>
         <span id="signup">
           Don't have an account?{" "}
           <Link to="/profile/signup" id="signup-btn">
@@ -94,4 +95,5 @@ const Login = ({ onSuccess }) => {
   );
 };
 
-export default Login;
+
+export default React.memo(Login);

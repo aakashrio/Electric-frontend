@@ -5,3 +5,26 @@
 .main{
     height: 1000px;
 }
+
+.home_banner{
+    width: 100%;
+    height: auto;
+    
+}
+#mainslider{
+    width: 50%;
+}
+
+#slider{
+    margin: 3%  0 0 0;
+    /* border: 1px solid orange; */
+}
+
+#subs1{
+    background-color: rgba(0, 0, 0, 0.33);
+    transition: all 0.3s linear;
+}
+
+#slider:hover #subs1{
+    background-color: rgba(0, 0, 0, 0.696);
+}

@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Subnav  from './subnav'
-const store = () => {
+
+const Store = () => {
   return (
     <div>
       <Subnav />
@@ -9,4 +10,5 @@ const store = () => {
   )
 }
 
-export default store
+
+export default React.memo(Store);
