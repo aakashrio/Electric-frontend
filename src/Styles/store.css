@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+
+*{
+    box-sizing: border-box;
+}
+.store-main-content{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid gold; */
+    justify-content: center;
+}
+
+.game-cards{
+    margin: 2%;
+    border: 1px solid rgba(76, 76, 76, 0.404);
+    width: 250px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 0;
+    transition: all 0.3s linear;
+}
+
+.game-card-secoundary{
+    display:none;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7988445378151261) 69%, rgba(0,0,0,0.68792016806722693) 100%);
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.3s linear;
+
+}
+
+@keyframes blinking {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 5px); }
+    100%   { transform: translate(0, -0px); }
+}
+
+.game-cards:hover{
+    box-shadow: 0px 0px 20px 1px #fefefe3f;
+    border: 0;
+    outline: 1px solid rgba(255, 255, 255, 0.8);
+    animation-name: blinking;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    
+
+   
+}
+
+.game-cards:hover .game-card-secoundary{
+    display: flex;
+   
+}
+
+.game-logo{
+    height: 30%;
+    width: 70%;
+    aspect-ratio: 1/1;
+    margin: 0 auto 10% auto;
+    /* border: 1px solid gold; */
+}
+
+.game-logo img{
+    height: 100%;
+    width: 100%;
+}
+
+.game-name{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400; 
+}
+
+.game-button{
+    width: 50%;
+    height: 10%;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: 0;
+    border-radius: 8px;
+    margin:  10% 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+}

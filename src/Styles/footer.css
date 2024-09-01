@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+*{
+    box-sizing: border-box;
+}
+
+.footer-main{
+    /* border: 1px solid red; */
+}
+
+.footer-dis{
+    /* margin: 2%; */
+    text-align: left;
+    color: rgb(200, 200, 200);
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.footer-container{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2% 0;
+    /* padding: 0 5% 0 3%; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo{
+    opacity: 0.5;
+}
+
+.footer-copyright{
+    color: rgb(200, 200, 200);
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.footer-social-media{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+    align-items: center;
+    width: auto;
+}
+
+.footer-icon{
+    cursor: pointer;
+    margin: 0 6px;
+    opacity: 0.5;
+    transition: all 0.3s linear;
+}
+
+.footer-icon:hover{
+    scale: 1.1;
+    opacity: 1;
+}
